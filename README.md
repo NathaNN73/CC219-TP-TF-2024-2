@@ -1,59 +1,37 @@
-# Sistema de Recomendación de Películas Basado en Análisis de Sentimientos
+# Sistema de Recomendación de Películas
 
-## Descripción del Caso de Uso
+## Objetivo del Trabajo
+El objetivo de este proyecto es desarrollar un sistema de recomendación de películas utilizando técnicas avanzadas de Procesamiento de Lenguaje Natural (NLP) y Minería de Textos para analizar críticas cinematográficas en español. Este sistema busca mejorar la experiencia de los usuarios en plataformas de streaming, sugiriendo contenido relevante y personalizado basado en las emociones y polaridad expresadas en las críticas de las películas. A través de este enfoque, también se espera optimizar la retención de clientes y el tiempo de visualización de las plataformas de cine y series.
 
-En el contexto actual del cine, la gran cantidad de películas disponibles puede resultar abrumadora para los espectadores, quienes a menudo buscan recomendaciones personalizadas que se alineen con sus gustos. Un sistema de recomendación de películas bien diseñado no solo mejora la experiencia del usuario al sugerir contenido relevante, sino que también ayuda a las plataformas a maximizar la retención de clientes y aumentar el tiempo de visualización, factores críticos para su éxito comercial. Sin un sistema efectivo, los usuarios podrían sentirse frustrados al buscar nuevas películas o abandonar la plataforma debido a una falta de conexión con el contenido disponible.
+## Nombre de los Alumnos Participantes
+- **Edison Coaguila**
+- *(Agrega aquí el nombre de otros participantes si los hay)*
 
-Este proyecto tiene como objetivo desarrollar un sistema de recomendación basado en Procesamiento de Lenguaje Natural (NLP) que analice críticas cinematográficas en español, facilitando la elección de contenidos y mejorando la experiencia del usuario. La necesidad de un sistema de recomendación es especialmente relevante en un mercado saturado, donde múltiples plataformas compiten por atraer a los espectadores. Como señala Paschos (2023), *"los sistemas de recomendación abordan el problema de la sobrecarga de información al filtrar contenido según los intereses y preferencias del usuario, lo que es crucial para mejorar la experiencia del cliente en plataformas digitales"*. De este modo, nuestra propuesta ayudará a los espectadores a evitar la tediosa tarea de navegar entre la vasta cantidad de contenido disponible en línea.
+## Breve Descripción del Dataset
+En este proyecto, se utilizan dos datasets principales obtenidos de Kaggle, que contienen críticas de películas en español extraídas del sitio web Filmaffinity:
 
-### Preguntas de Investigación
-1. **¿Cómo se pueden clasificar las críticas de películas en categorías como "positivas", "neutras" y "negativas"?**  
-   La clasificación de las críticas de películas en estas categorías es un problema típico de análisis de sentimientos dentro del campo de la Minería de Texto y NLP. Este proceso implica analizar el texto de las críticas para determinar la polaridad de cada comentario, es decir, si refleja una percepción favorable, neutral o desfavorable sobre la película. Para esta pregunta, aplicaremos técnicas de NLP como el análisis de sentimientos.
-   
-2. **¿Es posible clasificar las películas o incluso los géneros en función de las emociones expresadas en las críticas de los usuarios?**  
-   El enfoque de análisis de sentimientos se puede extender para clasificar películas o géneros basados en las emociones expresadas en las críticas. Mientras que el análisis de polaridad clasifica los textos en "positivo", "neutral" o "negativo", el análisis de emociones identifica categorías emocionales más detalladas, como "alegría", "tristeza", "ira", "miedo", "sorpresa" o "disgusto". Para esta pregunta, agruparemos las películas y posteriormente los géneros según las categorías emocionales derivadas del análisis de las críticas.
+1. **Primer Dataset: Críticas de películas en Filmaffinity**
+   - Autor: Moya R. (2021)
+   - Contenido: Opiniones sobre más de 50 películas españolas.
 
----
+2. **Segundo Dataset: Críticas Filmaffinity Netflix**
+   - Autor: Mos A. (2024)
+   - Contenido: Críticas en español sobre 1,000 películas y series españolas de la plataforma Netflix.
 
-## Descripción del Conjunto de Datos (Dataset)
+Ambos datasets están diseñados para ser útiles en tareas de Procesamiento de Lenguaje Natural en español y contienen los siguientes atributos:
+- `film_name`: Título de la película.
+- `gender`: Género de la película (comedia, terror, acción, etc.).
+- `film_avg_rate`: Nota media de la película (votos de todos los usuarios).
+- `review_rate`: Nota que el usuario que hace la crítica pone a la película.
+- `review_title`: Título de la crítica.
+- `review_text`: Crítica de la película.
 
-Para este proyecto, utilizaremos dos datasets obtenidos de la plataforma Kaggle. A continuación, se proporciona una breve descripción de cada uno:
+> **Nota**: Los archivos PDF con las descripciones detalladas de los datasets se pueden adjuntar al repositorio.
 
-### 1. Primer Dataset: Críticas de Películas en Filmaffinity
-- **Autor**: Moya R. (2021)
-- **Descripción**: Este dataset incluye críticas de películas en español obtenidas del sitio web Filmaffinity, con opiniones sobre más de 50 películas españolas.
-- **Campos**: `film_name`, `gender`, `film_avg_rate`, `review_rate`, `review_title`, `review_text`.
-
-### 2. Segundo Dataset: Críticas Filmaffinity Netflix
-- **Autor**: Mos A. (2024)
-- **Descripción**: Contiene críticas en español del sitio web Filmaffinity sobre 1,000 películas y series españolas disponibles en la plataforma NETFLIX. Este dataset fue inspirado en el primero y tiene una estructura similar en cuanto a los campos y atributos que contiene.
-- **Campos**: `film_name`, `gender`, `film_avg_rate`, `review_rate`, `review_title`, `review_text`.
-
-### Atributos Comunes de los Datasets
-| **Atributo**       | **Descripción**                                             |
-|--------------------|-------------------------------------------------------------|
-| `film_name`        | Título de la película.                                      |
-| `gender`           | Género de la película (comedia, terror, acción, etc.).      |
-| `film_avg_rate`    | Nota media de la película (votos de todos los usuarios).    |
-| `review_rate`      | Nota que el usuario que hace la crítica pone a la película. |
-| `review_title`     | Título de la crítica.                                       |
-| `review_text`      | Crítica de la película.                                     |
-
-Ambos datasets fueron diseñados como un aporte a la comunidad hispanohablante, orientándose a ser de utilidad en tareas de Procesamiento de Lenguaje Natural (NLP) en español.
-
----
-
-## Conclusión
-
-Este proyecto tiene como objetivo abordar el problema de la sobrecarga de información en plataformas de streaming mediante un sistema de recomendación basado en análisis de sentimientos. La implementación de este sistema no solo mejorará la experiencia del usuario, sino que también proporcionará insights valiosos para las plataformas que buscan optimizar el tiempo de visualización y la retención de clientes.
-
----
+## Conclusiones
+- El análisis de sentimientos y emociones a partir de críticas en español es un método efectivo para mejorar la personalización de recomendaciones de películas.
+- Utilizar sistemas de recomendación basados en NLP permite a las plataformas de streaming optimizar la retención de usuarios y el tiempo de visualización.
+- La correcta clasificación de críticas y la identificación de emociones pueden proporcionar insights valiosos para la mejora de la experiencia de los usuarios.
 
 ## Licencia
-
-Este proyecto está licenciado bajo la **Licencia MIT**. Puedes usar, modificar y distribuir el contenido de este repositorio de acuerdo con los términos de esta licencia.
-
----
-
-**¡Gracias por tu interés en nuestro proyecto!**  
-Si tienes preguntas, comentarios o sugerencias, no dudes en abrir un *issue* o ponerte en contacto con nosotros.
+Este proyecto está licenciado bajo la [Licencia MIT](LICENSE). Esto significa que puedes utilizar, modificar y distribuir este proyecto libremente, siempre y cuando se incluya una copia de la licencia original.
