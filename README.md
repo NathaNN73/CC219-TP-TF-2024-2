@@ -3,9 +3,10 @@
 ## Objetivo del Trabajo
 El objetivo de este proyecto es desarrollar un sistema de recomendación de películas utilizando técnicas avanzadas de Procesamiento de Lenguaje Natural (NLP) y Minería de Textos para analizar críticas cinematográficas en español. Este sistema busca mejorar la experiencia de los usuarios en plataformas de streaming, sugiriendo contenido relevante y personalizado basado en las emociones y polaridad expresadas en las críticas de las películas. A través de este enfoque, también se espera optimizar la retención de clientes y el tiempo de visualización de las plataformas de cine y series.
 
-## Nombre de los Alumnos Participantes
-- **Edison Coaguila**
-- *(Agrega aquí el nombre de otros participantes si los hay)*
+## Alumnos
+- **Edison Coaguila Fuentes**
+- **Joe Turpo Queque**
+- **Marcelo Poggi Diaz**
 
 ## Breve Descripción del Dataset
 En este proyecto, se utilizan dos datasets principales obtenidos de Kaggle, que contienen críticas de películas en español extraídas del sitio web Filmaffinity:
@@ -26,7 +27,6 @@ Ambos datasets están diseñados para ser útiles en tareas de Procesamiento de 
 - `review_title`: Título de la crítica.
 - `review_text`: Crítica de la película.
 
-> **Nota**: Los archivos PDF con las descripciones detalladas de los datasets se pueden adjuntar al repositorio.
 
 ## Conclusiones
 - El análisis de sentimientos y emociones a partir de críticas en español es un método efectivo para mejorar la personalización de recomendaciones de películas.
